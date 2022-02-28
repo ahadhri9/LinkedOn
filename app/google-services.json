@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "145794809278",
+    "project_id": "linkedon-b7c62",
+    "storage_bucket": "linkedon-b7c62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145794809278:android:e22ea008248ec7307ccdef",
+        "android_client_info": {
+          "package_name": "fr.isen.hadhri.linkedon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145794809278-6o6ktp97m4v48t67og54qu7bv6jhnv02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDk5AE7KxD2H-iMcq3G-rhRDAvT3Xm9Pc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145794809278-6o6ktp97m4v48t67og54qu7bv6jhnv02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
