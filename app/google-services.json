@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "145794809278",
+    "firebase_url": "https://linkedon-b7c62-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "linkedon-b7c62",
     "storage_bucket": "linkedon-b7c62.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "145794809278-2oqp08m8bbemjfogajo107lpua2ce1hp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.isen.hadhri.linkedon",
+            "certificate_hash": "d07d0c6093150ec816f7a60fd449982790c71a01"
+          }
+        },
         {
           "client_id": "145794809278-6o6ktp97m4v48t67og54qu7bv6jhnv02.apps.googleusercontent.com",
           "client_type": 3

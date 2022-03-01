@@ -2,8 +2,6 @@ package fr.isen.hadhri.linkedon
 
 import android.os.Bundle
 import android.util.Log
-import android.view.inputmethod.InputBinding
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
@@ -47,13 +45,16 @@ class MainActivity : BaseActivity() {
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
         // Read from the database
+        //myRef.setValue(Post("mon commentaire", "mon titre", "img"))
         myRef.addValueEventListener(object: ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                val value = snapshot.getValue<String>()
+                val value = snapshot.value
+                val post = snapshot.getValue<Map<String,Post>>()
 
+                post?.values?.first()
                 Log.d(TAG, "Value is: " + value)
             }
 
