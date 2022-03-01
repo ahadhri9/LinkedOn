@@ -1,5 +1,6 @@
 package fr.isen.hadhri.linkedon
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,13 +10,12 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import fr.isen.hadhri.linkedon.databinding.ActivityLoginBinding
 import fr.isen.hadhri.linkedon.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
     private  lateinit var binding: ActivityRegisterBinding
     private lateinit var auth: FirebaseAuth
-    val TAG = "RegisterActivity"
+    val TAG = "LoginActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val database = Firebase.database("https://linkedon-b7c62-default-rtdb.europe-west1.firebasedatabase.app")
@@ -34,24 +34,38 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun listenClick() {
-        auth.signInWithEmailAndPassword(binding.EmailAddress.text.toString(),binding.Password.text.toString())
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithEmail:success")
-                    val user = auth.currentUser
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
-
+        binding.RegisterBtn.setOnClickListener {
+            auth.createUserWithEmailAndPassword(binding.EmailAddress.text.toString().trim(),binding.Password.text.toString().trim())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "createUserWithEmail:success")
+                        changeActivityToMain()
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                        Log.w(binding.EmailAddress.text.toString(), task.exception)
+                        Toast.makeText(baseContext, "Authentication failed.",
+                            Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
+        }
+
+        binding.button.setOnClickListener {
+            changeActivityToLogin()
+        }
     }
 
     private fun updateUI(user: FirebaseUser?) {
         TODO("Not yet implemented")
+    }
+
+    private fun changeActivityToMain() {
+        startActivity(Intent(this, MainActivity::class.java))
+    }
+
+    private fun changeActivityToLogin() {
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
 //test@gmail.com
