@@ -10,7 +10,7 @@ class PostingActivity : AppCompatActivity() {
 
         //récupérer le pseudo/nom&prénom de la personne qui poste à travers des informations de connexion
 
-        //le bouton post renvoie sur les détails du post en mode lecture
+        //le bouton post renvoie sur l'activité main
 
         //nom&prénom/pseudo, date et heure de post, titre, contenu du post, bouton like, bouton commentaire
 

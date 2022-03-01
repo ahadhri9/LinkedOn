@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LinkedOn">
         <activity
+            android:name=".BaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".PostingActivity"
             android:exported="false" />
         <activity
